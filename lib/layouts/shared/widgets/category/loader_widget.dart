@@ -17,7 +17,7 @@ class Loader extends StatelessWidget {
         child: GenericProgressIndicator(),
       );
 
-    if (object.lenght == 0)
+    if (object.length == 0)
       return Center(
         child: Text("Nenhum item encontrado"),
       );

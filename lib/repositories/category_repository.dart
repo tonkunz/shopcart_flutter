@@ -4,10 +4,10 @@ import '../settings/settings.dart';
 
 class CategoryRepository {
   Future<List<CategoryModel>> getAll() async {
-    var url = "${Settings.apiUrl}va/categories";
+    var url = "${Settings.apiUrl}v1/categories";
 
     Response response = await Dio().get(url);
-
+    
     return (response.data as List)
       .map((category) => CategoryModel.fromJson(category))
       .toList();
