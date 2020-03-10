@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shopcart_bloc_provider/models/category_model.dart';
 import 'category_card_widget.dart';
-import 'loader_widget.dart';
+import '../loader_widget.dart';
 
 class CategoryList extends StatelessWidget {
   final List<CategoryModel> categories;
