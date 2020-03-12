@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shopcart_bloc_provider/layouts/android/pages/product_page.dart';
 import 'package:shopcart_bloc_provider/models/product_list_item.dart';
+import '../add_to_cart_widget.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductListItemModel item;
@@ -92,8 +93,7 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                // AddToCart(item: item),
+                AddToCart(item: item),
               ],
             ),
           ),

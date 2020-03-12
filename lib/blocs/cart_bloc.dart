@@ -14,11 +14,16 @@ class CartBloc extends ChangeNotifier {
     calculateTotal();
   }
 
+  remove(CartItemModel item) {
+    cart.removeWhere((x) => x.id == item.id);
+    calculateTotal();
+  }
+
   itemInCart(CartItemModel item) {
     var result = false;
 
     cart.forEach((x) {
-      if(item.id == x.id) return true;
+      if(item.id == x.id) result = true;
     });
 
     return result;
@@ -38,11 +43,6 @@ class CartBloc extends ChangeNotifier {
     }
   }
 
-  remove(CartItemModel item) {
-    cart.removeWhere((x) => x.id == item.id);
-    calculateTotal();
-  }
-
   calculateTotal() {
     total = 0;
 
@@ -52,6 +52,4 @@ class CartBloc extends ChangeNotifier {
 
     notifyListeners();
   }
-
-
 }
