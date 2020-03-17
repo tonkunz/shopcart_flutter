@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shopcart_bloc_provider/blocs/cart_bloc.dart';
+import 'package:shopcart_bloc_provider/layouts/shared/widgets/cart/cart_item_widget.dart';
 import 'package:shopcart_bloc_provider/layouts/shared/widgets/loader_widget.dart';
 import 'package:shopcart_bloc_provider/models/cart_item.dart';
 
@@ -24,15 +25,14 @@ class CartPage extends StatelessWidget {
                 child: Loader(
                     object: bloc.cart,
                     callback: () {
-                      ListView.builder(
+                      return ListView.builder(
                         scrollDirection: Axis.vertical,
                         itemCount: items.length,
                         itemBuilder: (context, index) {
                           return Dismissible(
-                            // child: CartItem(
-                            //   item: items[index],
-                            // ),
-                            child: Text("CartItem"),
+                            child: CartItem(
+                              item: items[index],
+                            ),
                             key: Key(items[index].id),
                             onDismissed: (direction) {
                               bloc.remove(items[index]);
