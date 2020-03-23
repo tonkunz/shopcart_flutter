@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopcart_bloc_provider/blocs/cart_bloc.dart';
+import 'package:shopcart_bloc_provider/layouts/android/pages/account_page.dart';
 import 'package:shopcart_bloc_provider/layouts/android/pages/cart_page.dart';
 import 'home_page.dart';
 
@@ -14,7 +15,7 @@ class TabsPage extends StatelessWidget {
         children: [
           HomePage(),
           CartPage(),
-          Container(color: Colors.green),
+          AccountPage(),
         ],     
       ),
       bottomNavigationBar: new TabBar(

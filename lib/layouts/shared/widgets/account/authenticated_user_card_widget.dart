@@ -11,7 +11,7 @@ class AuthenticatedUserCard extends StatelessWidget {
       child: Center(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 20),
+            SizedBox(height: 80),
             Container(
               width: 200,
               height: 200,
@@ -28,9 +28,11 @@ class AuthenticatedUserCard extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(200)),
               ),
             ),
+            SizedBox(height: 20),
+            Text("Bem-vindo, ${bloc.user.name}"),
             SizedBox(height: 10),
             FlatButton(
-              onPressed: bloc.logout(),
+              onPressed: bloc.logout,
               child: Text("Sair"),
             ),
           ],
