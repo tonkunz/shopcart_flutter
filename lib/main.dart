@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopcart_bloc_provider/blocs/theme_bloc.dart';
 import 'package:shopcart_bloc_provider/layouts/android/pages/tabs_page.dart';
 import 'blocs/account_bloc.dart';
 import 'blocs/cart_bloc.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<AccountBloc>.value(
           value: AccountBloc(),
         ),
+        ChangeNotifierProvider<ThemeBloc>.value(
+          value: ThemeBloc(),
+        ),
       ],
       child: Main(),
     );
@@ -30,12 +34,12 @@ class MyApp extends StatelessWidget {
 class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ThemeBloc bloc = Provider.of<ThemeBloc>(context);
+
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: bloc.theme,
       home: DefaultTabController(
         length: 3,
         child: TabsPage()
