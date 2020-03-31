@@ -40,6 +40,7 @@ class Main extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: bloc.theme,
+      // home: TabsPage(),
       home: DefaultTabController(
         length: 3,
         child: TabsPage()
